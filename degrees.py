@@ -83,6 +83,16 @@ def main():
             movie = movies[path[i + 1][0]]["title"]
             print(f"{i + 1}: {person1} and {person2} starred in {movie}")
 
+def extract_path(target_node):
+    path = []
+
+    while target_node.parent is not None:
+        path.append((target_node.action, target_node.state))
+        target_node = target_node.parent
+    
+    path.reverse()
+
+    return path
 
 def shortest_path(source, target):
     """
@@ -91,9 +101,28 @@ def shortest_path(source, target):
 
     If no possible path, returns None.
     """
+    start = Node(state=source, parent=None, action=None)
+    frontier = QueueFrontier()
+    frontier.add(start)
 
-    # TODO
-    raise NotImplementedError
+    explored = set()
+
+    while True:
+
+        if frontier.empty():
+            return None
+        
+        node = frontier.remove()
+
+        explored.add(node.state)
+
+        for movie, person in neighbors_for_person(node.state):
+            if not frontier.contains_state(person) and person not in explored:
+                child = Node(state=person, parent=node, action=movie)
+                # If the child we get is the target then we can directly return here
+                if child.state == target:
+                    return extract_path(child)
+                frontier.add(child)
 
 
 def person_id_for_name(name):
