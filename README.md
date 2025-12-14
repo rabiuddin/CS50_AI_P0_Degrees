@@ -59,6 +59,7 @@ Download or clone this repository and **run the program like this:**
 
 ```bash
 python degrees.py large
+```
 
 You will be prompted to enter two actor names:
 Name: Emma Watson  
@@ -82,3 +83,4 @@ edX
 Output Path:
 If a connection is found, the script prints each movie/actor step in order. If not, it reports no connection. 
 edX
+
