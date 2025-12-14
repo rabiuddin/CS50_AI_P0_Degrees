@@ -1,4 +1,3 @@
-```markdown
 # 🎓 CS50 AI Project 0 — Degrees
 
 This repository contains my solution to **Project 0: Degrees** from **CS50’s Introduction to Artificial Intelligence with Python** — a project that computes the number of degrees of separation between two actors using a breadth-first search algorithm in Python. :contentReference[oaicite:1]{index=1}
@@ -10,13 +9,10 @@ This repository contains my solution to **Project 0: Degrees** from **CS50’s I
 Inspired by the classic *“Six Degrees of Kevin Bacon”* concept, this program determines the **shortest connection path** between two actors through the movies they’ve starred in. Each step in the path connects two actors who appeared together in a film. :contentReference[oaicite:2]{index=2}
 
 For example:
-```
-
 Emma Watson → Brendan Gleeson via “Harry Potter and the Order of the Phoenix”
 Brendan Gleeson → Michael Fassbender via “Trespass Against Us”
 Michael Fassbender → Jennifer Lawrence via “X-Men: First Class”
 
-```
 The degrees of separation here would be 3. :contentReference[oaicite:3]{index=3}
 
 ---
@@ -33,17 +29,15 @@ The degrees of separation here would be 3. :contentReference[oaicite:3]{index=3}
 
 ## 📁 Repository Structure
 
-```
 
 CS50_AI_P0_Degrees/
-├── degrees.py         # Main application
-├── people.csv         # Actors dataset
-├── movies.csv         # Movies dataset
-├── stars.csv          # Actor-movie relationships
-├── util.py            # BFS helper classes (Node, Frontier)
-├── README.md          # Project documentation
+├── degrees.py # Main application
+├── people.csv # Actors dataset
+├── movies.csv # Movies dataset
+├── stars.csv # Actor-movie relationships
+├── util.py # BFS helper classes (Node, Frontier)
+├── README.md # Project documentation
 
-````
 
 *(Datasets may be included separately or downloaded as part of the CS50 distribution code.)* :contentReference[oaicite:5]{index=5}
 
@@ -65,59 +59,26 @@ Download or clone this repository and **run the program like this:**
 
 ```bash
 python degrees.py large
-````
 
 You will be prompted to enter two actor names:
-
-```
 Name: Emma Watson  
 Name: Jennifer Lawrence
-```
 
-The program will then print out the number of degrees of separation and the connecting path. ([edX][1])
-
----
-
-## 🧠 How It Works
-
-1. **Load Data:**
-   CSV files are parsed into dictionaries mapping people to movies and movies to people. ([edX][1])
-
-2. **Breadth-First Search (BFS):**
-   The search algorithm expands neighbors by movie connections, tracking visited actors and building the shortest path. ([edX][1])
-
-3. **Output Path:**
-   If a connection is found, the script prints each movie/actor step in order. If not, it reports no connection. ([edX][1])
+The program will then print out the number of degrees of separation and the connecting path. 
+edX
 
 ---
 
-## 🧪 Testing
+🧠 How It Works
 
-You can test your implementation using CS50’s **check50** tool, which runs automated tests for correctness. ([GitHub][2])
+Load Data:
+CSV files are parsed into dictionaries mapping people to movies and movies to people. 
+edX
 
----
+Breadth-First Search (BFS):
+The search algorithm expands neighbors by movie connections, tracking visited actors and building the shortest path. 
+edX
 
-## 📚 Learn More
-
-This project helps teach core AI concepts like **graph search**, **data representation**, and **algorithm efficiency** — all key foundations in the CS50 AI course. ([edX][3])
-
-Course link: [https://cs50.harvard.edu/ai/2024/](https://cs50.harvard.edu/ai/2024/) ([edX][1])
-
----
-
-## 🤝 Contributing
-
-This repository holds my personal solution to the assignment. If you want to improve the code, add enhancements, or compare different strategies, feel free to fork and explore!
-
----
-
-## 📜 License
-
-This project is for **educational purposes** — it isn’t affiliated with CS50 or Harvard, and is not intended for commercial use.
-
----
-
-⭐ **Happy learning!** 🚀
-
-```
-
+Output Path:
+If a connection is found, the script prints each movie/actor step in order. If not, it reports no connection. 
+edX
